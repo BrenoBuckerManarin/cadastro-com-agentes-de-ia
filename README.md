@@ -6,7 +6,7 @@ Construído em Python com **Claude Code**, **Codex (GPT)** e **Gemini** entre se
 para o meu próprio trabalho como analista de e-commerce.
 
 > **Sobre este repositório.** É uma vitrine. O pipeline completo é da empresa e fica privado: ele contém
-> credenciais, SKUs, preços e perfis de navegador logados. Aqui estão a arquitetura, os números medidos e
+> credenciais, SKUs, preços e perfis de navegador logados. Aqui estão a arquitetura, os resultados e
 > os módulos genéricos que não dependem de nada da empresa, com os testes que rodam sozinhos.
 
 ## O problema
@@ -42,19 +42,13 @@ flowchart LR
 - **Erro conhecido ele corrige; erro novo, ele para e pergunta.** As respostas do usuário viram regra
   no `AGENTS.md` do projeto, e a mesma pergunta não volta.
 
-## Números medidos (07/10 a 06/11/2026)
+## Resultado
 
-| Métrica | Valor |
-|---|---|
-| Gravações na Tray e no AnyMarket | 221 |
-| SKUs distintos cadastrados | 100 |
-| Gravações verificadas sem erro | 192 (87%) |
-| Aprovadas de primeira, sem correção do usuário | 199 (90%) |
-| Lotes processados pelo ciclo desde 29/09 | 63 |
-| Tempo de um cadastro com variações | de mais de 1 h para cerca de 10 min |
-| Testes automatizados nos 3 projetos | 2.159 (480 + 685 + 994) |
+No último mês de medição (outubro a novembro de 2026) o pipeline cadastrou 100 produtos, e nove em cada dez
+gravações foram aprovadas de primeira, sem correção. Um cadastro com variações, que levava mais de uma hora,
+hoje leva cerca de 10 minutos. Os três projetos somam mais de 2 mil testes automatizados.
 
-Os números vêm do log do modo sombra (abaixo), não de estimativa.
+Isso vem do log do modo sombra (abaixo), não de estimativa.
 
 ## Painel: a ferramenta interna
 
@@ -73,7 +67,7 @@ flowchart LR
 - Aprovar com um clique chama o próprio `lote.py`, então todas as travas continuam valendo.
 - Conversa com o agente (Claude ou ChatGPT) na própria tela, por produto.
 - Arrastar um card muda a prioridade, e o ciclo passa a atender nessa ordem.
-- Feito em um dia (05/11/2026), com 64 testes Python e 9 testes da interface.
+- Feito em um dia, com testes do servidor e da interface.
 
 A tela não está aqui porque mostra produtos, SKUs e nomes de pessoas da equipe.
 
